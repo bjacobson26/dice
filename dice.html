@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dice Game</title>
+	<link rel="stylesheet" type="text/css" href="dice.css">
+</head>
+<body>
+
+	<h1 id="title">Dice Game</h1>
+	<h1 id="winLose"></h1>
+<h3 id="yourNum"></h3>
+
+<div class="dice">
+	<div id="dice1"></div>
+	<div id="dice2"></div>
+</div>
+
+<div>
+	<span>BET: </span>$<input type="number" id="bet"min="0.01" step="0.50" max="1000" value="1.00"></input>
+</div>
+<br>
+<button id="rollDice" onclick="play();">Roll Dice</button>
+
+<h3 id="wallet"></h3>
+<h1 id="playAgain">"PLAY AGAIN?"</h1>
+</body>
+<script src="dice.js"></script>
+</html>
