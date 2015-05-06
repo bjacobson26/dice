@@ -42,7 +42,7 @@ rolldice = function(){
 win = function(){
 	winLose.innerHTML = "YOU WON!";
 	rollButton.style.display = "none";
-	userMoney = userMoney + (bet * 2);
+	userMoney = Math.round(userMoney + (bet * 2)) * 100 / 100;
 	wallet.innerHTML = "Wallet: " + "$" + userMoney;
 	localStorage.setItem('money', Math.round(userMoney * 100) / 100);
 	playAgain.style.display = "block";
@@ -80,7 +80,8 @@ getBet = function(){
 	bet = document.getElementById('bet').value
 	if(userMoney - bet < 0){
 		alert("SORRY, YOU DON'T HAVE ENOUGH MONEY TO BET THAT MUCH!");
-		keepgoing = false;
+		location.reload();
+
 	}
 	else{
 		userMoney = userMoney - bet;
@@ -94,7 +95,7 @@ getBet = function(){
 
 play = function(){
 
-if(userMoney > 0){
+if(userMoney > -1){
 	if(bet_is == false){
 		getBet();
 	}

@@ -1,28 +1,53 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Dice Game</title>
+	<title>Dice Game: 7-11</title>
 	<link rel="stylesheet" type="text/css" href="dice.css">
 </head>
 <body>
 
-	<h1 id="title">Dice Game</h1>
-	<h1 id="winLose"></h1>
-<h3 id="yourNum"></h3>
 
-<div class="dice">
-	<div id="dice1"></div>
-	<div id="dice2"></div>
-</div>
 
-<div>
-	<span>BET: </span>$<input type="number" id="bet"min="0.01" step="0.50" max="1000" value="1.00"></input>
-</div>
-<br>
-<button id="rollDice" onclick="play();">Roll Dice</button>
+	<div class="column" id="diceGame">
+		
+		<h1 id="title">Dice Game</h1>
+		<h1 id="winLose"></h1>
+		
+		<h3 id="yourNum"></h3>
 
-<h3 id="wallet"></h3>
-<h1 id="playAgain">"PLAY AGAIN?"</h1>
+		<div class="dice">
+			<div id="dice1"></div>
+			<div id="dice2"></div>
+		</div>
+
+		<div>
+			<span>BET: </span>
+			$<input type="number" 
+							id="bet"
+							min="0.00" 
+							step="1" 
+							max="1000" 
+							value="1.00">
+			 </input>
+		</div>
+
+		<br>
+		<button id="rollDice" onclick="play();">Roll Dice</button>
+
+		<h3 id="wallet"></h3>
+
+	<h1 id="playAgain">"PLAY AGAIN?"</h1>
+	
+	</div>
+
+	<div class="column" id="rules">
+			<h1>RULES:</h1>
+			<p><span style="font-weight:bold;">1st turn:</span> 7 or 11 wins. 2 or 12 loses. Any other number becomes YOUR NUMBER.</p>
+			<p><span style="font-weight:bold;">After 1st turn:</span> Rolling YOUR NUMBER wins. 7 or 11 loses.</p>
+			<p><span style="font-weight:bold;">Minimum Bet:</span> $0.50</p>
+	</div>
+
+
 </body>
 <script src="dice.js"></script>
 </html>
